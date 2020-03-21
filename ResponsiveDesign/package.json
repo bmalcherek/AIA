@@ -1,0 +1,20 @@
+{
+  "name": "aia",
+  "version": "1.0.0",
+  "description": "Reponsive design assingment",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"sass --watch scss/style.scss css/style.css\" \"live-server --watch=*.html,css/*.css,assets/* --no-browser\"",
+    "build": "sass scss/style.scss css/style.css --style compressed"
+  },
+  "author": "Bartosz Malcherek",
+  "license": "ISC"
+}
