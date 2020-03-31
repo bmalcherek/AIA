@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"sass --watch scss/style.scss css/style.css\" \"live-server --watch=*.html,css/*.css,assets/* --no-browser\"",
+    "dev": "concurrently \"sass --watch scss/style.scss css/style.css\" \"live-server --watch=*.html,css/*.css,assets/*,*.js --no-browser\"",
     "build": "sass scss/style.scss css/style.css --style compressed"
   },
   "dependencies": {
