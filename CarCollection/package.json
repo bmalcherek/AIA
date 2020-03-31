@@ -1,0 +1,16 @@
+{
+  "name": "car_collection",
+  "version": "1.0.0",
+  "description": "2nd assignment for AIA class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bartosz Malcherek",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.13.1"
+  }
+}
