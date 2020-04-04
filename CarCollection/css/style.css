@@ -1,3 +1,33 @@
+table {
+  width: 100%;
+  column-gap: 2px;
+  border-spacing: 10px;
+}
 
+thead {
+  width: 100%;
+}
+thead > tr {
+  display: flex;
+  justify-content: center;
+}
+thead > tr > * {
+  background-color: white;
+}
+
+tr {
+  width: 100%;
+  display: flex;
+}
+tr:nth-child(odd) {
+  background-color: lightgray;
+  border-spacing: 10px;
+}
+
+td,
+th {
+  width: 33.3333333333%;
+  display: flex;
+}
 
 /*# sourceMappingURL=style.css.map */
