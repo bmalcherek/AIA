@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery</title>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(function () {
+        function get(url) {
+          return new Promise((resolve, reject) => {
+            const request = new XMLHttpRequest();
+            request.open("GET", url, true);
+
+            request.onload = function () {
+              if (request.status == 200) {
+                resolve(request.response);
+              } else {
+                reject({
+                  status: request.status,
+                  statusTex: request.statusText,
+                });
+              }
+            };
+
+            request.onerror = (err) => reject(err);
+            request.send();
+          });
+        }
+
+        $("#fetch").click(function () {
+          get("https://pokeapi.co/api/v2/pokemon/").then(
+            function (response) {
+              $("#data").append(response);
+            },
+            function (reject) {
+              $("#data").append(reject);
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="fetch">Fetch pokemons</button>
+    <div id="data"></div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    ></script>
+    <script>
+      $(function () {
+        $("#load").click(() => {
+          $.getJSON("guitars.json", ({ Guitars }) => {
+            Guitars.Guitar.forEach((guitar) => {
+              $("#list").append(`<li>${guitar.Brand} ${guitar.Model}</li>`);
+            });
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <button id="load">Load</button>
+    <ul id="list"></ul>
+  </body>
+</html>
