@@ -20,7 +20,7 @@
         });
         $("tr:even").addClass("asdf");
 
-        $("ol.a li.b:not(:has(a))").addClass("asdf");
+        $("ol.a:not(:has(a.b)) > li");
       });
     </script>
     <style>
@@ -30,6 +30,12 @@
     </style>
   </head>
   <body>
+    <p id="a">a</p>
+    <p>b</p>
+    <p>c</p>
+    <p>d</p>
+    <div>e</div>
+    <div class="c">f</div>
     <table>
       <tr>
         <td>First</td>
@@ -51,17 +57,13 @@
       </tr>
     </table>
     <div>
-      <button>Text A</button><button>Text B</button
-      ><span id="classic">Adding/removing class</span>
+      <button>Text A</button>
+      <button>Text B</button>
+      <span id="classic">Adding/removing class</span>
     </div>
-    <div><button>Text C</button><span id="toggle">Toggling class</span></div>
-
-    <ol class="a">
-      <li class="b"><a href="">this is link</a></li>
-      <li class="b"><a href="">this is link 2</a></li>
-      <li><a href="">this is link 2</a></li>
-      <li class="b">Not a link!!!!!</li>
-      <li class="b">This is not a link!</li>
-    </ol>
+    <div>
+      <button>Text C</button>
+      <span id="toggle">Toggling class</span>
+    </div>
   </body>
 </html>
