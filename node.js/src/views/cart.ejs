@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <div class="links">
+      <form action="/" method="get">
+        <button type="submit">Products</button>
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (product of products) {%>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td>
+            <form action="/cart/remove-product" method="POST">
+              <input
+                type="hidden"
+                name="product_id"
+                value="<%= product.id %>"
+              />
+              <input type="submit" value="Remove from cart" />
+            </form>
+          </td>
+        </tr>
+
+        <% }%>
+      </tbody>
+    </table>
+    <div class="summary">
+      <form action="/cart/clear" method="post">
+        <button type="submit">Cancel purchase</button>
+      </form>
+      <form action="/cart/purchase" method="post">
+        <button type="submit">Purchase</button>
+      </form>
+    </div>
+  </body>
+</html>

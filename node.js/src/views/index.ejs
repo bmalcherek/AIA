@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="messages">
+      <%= message %>
+    </div>
+    <div class="links">
+      <form action="/cart" method="/get">
+        <button type="submit">Cart</button>
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (product of products) {%>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td>
+            <form action="/cart/add-product" method="POST">
+              <input
+                type="hidden"
+                name="product_id"
+                value="<%= product.id %>"
+              />
+              <% if (cart.includes(product.id.toString())) { %>
+              <input type="submit" value="Add to cart" disabled /> cart <% }
+              else { %>
+              <input type="submit" value="Add to cart" />
+              <% } %>
+            </form>
+          </td>
+        </tr>
+
+        <% }%>
+      </tbody>
+    </table>
+  </body>
+</html>
