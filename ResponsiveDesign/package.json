@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "concurrently": "^5.1.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "live-server": "^1.2.1"
